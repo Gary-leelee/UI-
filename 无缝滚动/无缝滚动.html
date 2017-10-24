@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+</head>
+<script>
+window.onload = function() {
+    var oDiv = document.getElementById('div1');
+    var oUl = oDiv.getElementsByTagName('ul')[0];
+    var oLi = oUl.getElementsByTagName('li');
+    var oDir = document.getElementById('dir');
+    oUl.innerHTML += oUl.innerHTML;
+    // oUl.style.width=oUl.offsetWidth*2+'px';   两选一
+    oUl.style.width = oLi[0].offsetWidth * oLi.length + 'px';
+    var speed = 2;
+
+    function oMove() {
+        if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+            oUl.style.left = '0';
+        }
+        if (oUl.offsetLeft > 0) {
+            oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+        }
+        oUl.style.left = oUl.offsetLeft + speed + 'px';
+    }
+    var oTimer = setInterval(oMove, 30);
+
+    oDiv.onmouseover = function() {
+        clearInterval(oTimer);
+    }
+    oDiv.onmouseout = function() {
+        oTimer = setInterval(oMove, 30);
+    }
+    oDir.getElementsByTagName('a')[0].onclick = function() {
+        speed = -2;
+    }
+    oDir.getElementsByTagName('a')[1].onclick = function() {
+        speed = 2;
+    }
+}
+</script>
+<style>
+div,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+#div1 {
+    width: 1025px;
+    height: 115px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+div ul {
+    position: absolute;
+    float: left;
+    left: 0;
+    top: 0;
+}
+
+div ul li {
+    width: 205px;
+    height: 115px;
+    float: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+</style>
+
+<body>
+    <div id=dir>
+        <a href="javascript:;">向左移动</a>
+        <a href="javascript:;">向右移动</a>
+    </div>
+    <div id="div1">
+        <ul>
+            <li><img src="img/创客教育1.jpg" alt=""></li>
+            <li><img src="img/创客教育2.jpg" alt=""></li>
+            <li><img src="img/创客教育3.jpg" alt=""></li>
+            <li><img src="img/创客教育4.jpg" alt=""></li>
+            <li><img src="img/创客教育5.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>

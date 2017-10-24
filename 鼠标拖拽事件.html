@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标拖拽事件</title>
+    <style>
+    #div {
+        position: absolute;
+        /*JS实现移动事件一定一定记得CSS中对父元素进行绝对定位*/
+        width: 200px;
+        height: 200px;
+        background: #72F9A9;
+    }
+    .box{
+        border: 1px solid #212121;
+        position: absolute;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        var oDiv = document.getElementById('div');
+        oDiv.onmousedown = function(ev) {
+            var oEv = ev || event;
+            var disX = oEv.clientX - oDiv.offsetLeft;
+            var disY = oEv.clientY - oDiv.offsetTop;
+            var oBox=document.createElement('div');
+            oBox.className='box';
+            oBox.style.width=oDiv.offsetWidth-2+'px';
+            oBox.style.height=oDiv.offsetHeight-2+'px';
+            oBox.style.left=oDiv.offsetLeft+'px';
+            oBox.style.top=oDiv.offsetTop+'px';
+            document.body.appendChild(oBox);
+            function Mousemove(ev) {
+                var oEv = ev || event;
+                var X = oEv.clientX - disX;
+                var Y = oEv.clientY - disY;
+                if (X < 0) {
+                    X = 0;
+                } else if (X > document.documentElement.clientWidth - oDiv.offsetWidth) {
+                    X = document.documentElement.clientWidth - oDiv.offsetWidth;
+                }
+                if (Y < 0) {
+                    Y = 0;
+                }
+                oBox.style.left = X + 'px';
+                oBox.style.top = Y + 'px';
+            }
+            if (oDiv.setCapture) { //兼容IE浏览器
+                oDiv.onmousemove = Mousemove;
+                oDiv.onmouseup = function() {
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+                    oDiv.style.left=oBox.offsetLeft+'px';
+                    oDiv.style.top=oBox.offsetTop+'px';
+                    document.body.removeChild(oBox);
+
+                    if (oDiv.releaseCapture) {
+                        oDiv.releaseCapture();
+                    } //兼容
+                }
+                oDiv.setCapture(); //兼容
+            } else { //兼容Chrome、FF浏览器
+                document.onmousemove = Mousemove;
+                document.onmouseup = function() {
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+                    oDiv.style.left=oBox.offsetLeft+'px';
+                    oDiv.style.top=oBox.offsetTop+'px';
+                    document.body.removeChild(oBox);
+                    if (oDiv.releaseCapture) {
+                        oDiv.releaseCapture();
+                    }
+                }
+            }
+            return false;
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="div"></div>
+</body>
+
+</html>

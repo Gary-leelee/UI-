@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>表格的添加与删除</title>
+    <script>
+    window.onload=function(){
+    	var oBtn=document.getElementById('btn');
+    	var oClass=document.getElementById('class');
+    	var oName=document.getElementById('name');
+    	var oTab=document.getElementById('tab');
+    	var id=oTab.tBodies[0].rows.length+1;
+    	oBtn.onclick=function(){
+    		var oTr=document.createElement('tr');
+    		oTab.tBodies[0].appendChild(oTr);
+    		var oTd=document.createElement('td');
+    		oTr.appendChild(oTd);
+    		oTd.innerHTML=id++;
+
+    		var oTd=document.createElement('td');
+    		oTd.innerHTML=oName.value;
+    		oTr.appendChild(oTd);
+
+			var oTd=document.createElement('td');
+    		oTd.innerHTML=oClass.value;
+    		oTr.appendChild(oTd);
+
+			var oTd=document.createElement('td');
+    		oTd.innerHTML='<a href="javascript:;">删除</a>';
+    		oTr.appendChild(oTd);
+
+    		oTd.getElementsByTagName('a')[0].onclick=function(){
+                //"this.parentNode.parentNode"指的是a→oTd→oTr的"oTr"，即为需要删除的那一行
+    			oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+    		}
+    	}
+    }
+    </script>
+    <style>
+    #tab {
+        height: 20px;
+        line-height: 20px;
+        border-collapse: collapse;
+    }
+    #tab tr td {
+    	width: 150px;
+        border: 1px solid #333;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    姓名:<input id="name" type="text" style="width: 100px">
+    年级:<input id="class" type="text" style="width: 100px">
+    <input id="btn" type="button" value="添加">
+    </br>
+    </br>
+    <table id="tab">
+        <thead>
+            <tr>
+            	<td>Id</td>
+                <td>姓名</td>
+                <td>年级</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>随页面滚动右侧栏</title>
+	<script>
+	window.onscroll=function(){
+		var oDiv=document.getElementById('div1');
+		//scrollTop即是取对象的最顶部到对象在当前窗口显示的局限内的顶边的间隔
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		// oDiv.style.top=(document.documentElement.clientHeight-oDiv.style.height)/2+scrollTop+'px';
+		// document.documentElement.clientHeight是指视图的高度，oDiv.offsetHeight是指元素在视图中的高度
+		Move(parseInt((document.documentElement.clientHeight-oDiv.offsetHeight)/2+scrollTop));
+	}
+		var timer=null;
+		function Move(iTarget){
+			var oDiv=document.getElementById('div1');
+			clearInterval(timer);
+			timer=setInterval(function(){
+				var speed=(iTarget-oDiv.offsetTop)/6;
+				//当speed不能被6整除时，会得到0.X的小数，由于直接向上取整，speed之后都会以1的速度移动到iTarget终点
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(oDiv.offsetTop==iTarget){
+					clearInterval(timer);
+				}
+				else{
+					oDiv.style.top=oDiv.offsetTop+speed+'px';
+				}
+			},20);
+		}
+	</script>
+	<style>
+		#div1{
+			width: 100px;
+			height: 150px;
+			background-color: #F44949;
+			position: absolute;
+			top: 37%;
+			left: 0;
+		}
+	</style>
+</head>
+<body style="height:3000px">
+	<div id="div1"></div>
+</body>
+</html>

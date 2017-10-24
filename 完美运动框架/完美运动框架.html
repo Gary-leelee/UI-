@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>获取并修改class中的值</title>
+</head>
+<script type="text/javascript" src="startmove.js"></script>
+<script>
+window.onload = function() {
+    var oDiv = document.getElementById('div');
+    var oBox = getByClass(oDiv, 'box');
+    oDiv.onmouseover = function() {
+        for (var i = 0; i < oBox.length; i++) {
+            Move(oBox[i], {
+                width: 101,
+                height: 124,
+                opacity: 0
+            },function(){
+                Move(oBox[i],{width:223,height:312,opacity:30});
+        }
+    );}
+    oDiv.onmouseout = function() {
+            for (var i = 0; i < oBox.length; i++) {
+                Move(oBox[i], {
+                    height: 150,
+                    width: 200,
+                    opacity: 100
+                });
+            }
+        }
+        // ChangeAttr(div,box,'width',100);  无效
+}
+}
+</script>
+<style>
+.box {
+    width: 200px;
+    height: 150px;
+    background: #FE5D5D;
+    margin: 10px auto;
+}
+</style>
+
+<body>
+    <div id="div">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

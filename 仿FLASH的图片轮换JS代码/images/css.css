@@ -1,0 +1,152 @@
+body {
+    background: #666;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+.play {
+    font: 12px Arial;
+    width: 400px;
+    height: 430px;
+    margin: 50px auto 0;
+    background: #999;
+}
+
+.big_pic {
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 320px;
+    border-bottom: 1px solid #ccc;
+    background: #222;
+}
+
+.big_pic li {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 400px;
+    height: 320px;
+    background: url(loading.gif) no-repeat center center;
+}
+
+.mark_left {
+    position: absolute;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 320px;
+    opacity: 0;
+    background: red;
+    filter: alpha(opacity: 0);
+}
+
+.mark_right {
+    position: absolute;
+    z-index: 3000;
+    top: 0;
+    left: 200px;
+    width: 200px;
+    height: 320px;
+    opacity: 0;
+    background: green;
+    filter: alpha(opacity: 0);
+}
+
+.big_pic .prev {
+    position: absolute;
+    z-index: 3001;
+    top: 130px;
+    left: 10px;
+    display: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: url(btn.gif) no-repeat;
+}
+
+.big_pic .next {
+    position: absolute;
+    z-index: 3001;
+    top: 130px;
+    right: 10px;
+    display: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: url(btn.gif) no-repeat 0 -60px;
+}
+
+.big_pic .text {
+    position: absolute;
+    z-index: 3000;
+    top: 302px;
+    left: 10px;
+    color: #ccc;
+}
+
+.big_pic .length {
+    position: absolute;
+    z-index: 3000;
+    right: 10px;
+    bottom: 4px;
+    color: #ccc;
+}
+
+.big_pic .bg {
+    position: absolute;
+    z-index: 2999;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 25px;
+    opacity: .6;
+    background: #000;
+    filter: alpha(opacity=60);
+}
+
+.small_pic {
+    position: relative;
+    top: 7px;
+    left: 10px;
+    overflow: hidden;
+    width: 380px;
+    height: 94px;
+}
+
+.small_pic ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 94px;
+}
+
+.small_pic li {
+    float: left;
+    width: 120px;
+    height: 94px;
+    padding-right: 10px;
+    cursor: pointer;
+    opacity: .6;
+    background: url(loading.gif) no-repeat center center;
+    filter: alpha(opacity=60);
+}
+
+.small_pic img {
+    width: 120px;
+    height: 94px;
+}

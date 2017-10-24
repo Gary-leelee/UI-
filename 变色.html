@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>变色JavaScript</title>
+    <script type="text/javascript">
+    function getStyle(obj, name) { //获取CSS样式
+        if (obj.currentStyle) {
+            return obj.currentStyle[name];
+        } else {
+            return getComputedStyle(obj, 1)[name];
+        }
+    }
+
+    function red() {
+        var obj2 = document.getElementById('bianse');
+        obj2.style.backgroundColor = 'red';
+        alert(obj2.style.height); //没有效果：alert只能取"obj2"中的行间样式，无法获取obj2中的css样式
+    }
+
+    function green() {
+        var obj2 = document.getElementById('bianse');
+        obj2.style.backgroundColor = 'green';
+        alert(getStyle(obj2, 'width'));
+    }
+
+    function yellow() {
+        var obj2 = document.getElementById('bianse');
+        obj2.style.backgroundColor = 'yellow';
+    }
+
+    function setColor(color) {
+        document.getElementById('bianse').style.backgroundColor = color;
+    }
+    // }
+    </script>
+    <style>
+    #bianse {
+        width: 200px;
+        height: 200px;
+        background-color: #333;
+        border: 2px solid #eee;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 直接调用<Script>函数中的函数，而不从头到尾运行<Script> -->
+    <input id="anniu" type="button" value="变红" onclick="setColor('red')">
+    </button>
+    <input id="anniu" type="button" value="变绿" onclick="setColor('green')">
+    </button>
+    <input id="anniu" type="button" value="变黄" onclick="setColor('yellow')">
+    </button>
+    <input id="anniu" type="button" value="变红" onclick="red()">
+    </button>
+    <input id="anniu" type="button" value="变绿" onclick="green()">
+    </button>
+    <input id="anniu" type="button" value="变黄" onclick="yellow()">
+    </button>
+    <div id="bianse"></div>
+</body>
+
+</html>

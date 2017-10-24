@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全选、不选、反选</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        var sele = document.getElementById('sele');
+        var clear = document.getElementById('clear');
+        var unsele = document.getElementById('unsele');
+        var checkbox = document.getElementById('checkbox');
+        var check = checkbox.getElementsByTagName('input');
+        sele.onclick = function() {
+            for (i = 0; i < check.length; i++) {
+                check[i].checked = true;
+            }
+        }
+        clear.onclick = function() {
+            for (i = 0; i < check.length; i++) {
+                check[i].checked = false;
+            }
+        }
+        unsele.onclick = function() {
+            for (i = 0; i < check.length; i++) {
+                if (check[i].checked == false) {
+                    check[i].checked = true;
+                } else {
+                    check[i].checked = false;
+                }
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="全选" id="sele">
+    <input type="button" value="不选" id="clear">
+    <input type="button" value="全选" id="unsele">
+    <div id="checkbox">
+        <input type="checkbox" value="上海">上海
+        <br>
+        <input type="checkbox" value="北京">北京
+        <br>
+        <input type="checkbox" value="广州">广州
+        <br>
+        <input type="checkbox" value="深圳">深圳
+        <br>
+        <input type="checkbox" value="杭州">杭州
+        <br>
+        <input type="checkbox" value="武汉">武汉
+        <br>
+        <input type="checkbox" value="成都">成都
+        <br>
+        <input type="checkbox" value="江苏">江苏
+        <br>
+        <input type="checkbox" value="重庆">重庆
+        <br>
+        <input type="checkbox" value="天津">天津
+    </div>
+</body>
+
+</html>

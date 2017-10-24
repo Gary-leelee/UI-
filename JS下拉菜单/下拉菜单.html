@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+</head>
+<script type="text/javascript" src="startmove.js"></script>
+<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div');
+		var oNavBox=oDiv.children[0];
+		var oUl=oDiv.children[1];
+		var oLi=oUl.children;
+		for(var i=0;i<oLi.length;i++){
+			if(i%2==1){
+				
+			}
+		}
+	}
+</script>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+	#div{
+		margin: 0 auto;
+		width: 250px;
+	}
+	.navBox{
+		width: 250px;
+		height: 40px;
+		margin: 0 0 4px 0;
+		background: #333;
+	}
+	.navList li{
+		position: relative;
+		margin: 0 0 4px 0;
+		width: 300px;
+		height: 40px;
+		list-style: none;
+	}
+	.navList li a{
+		display: block;
+		width: 250px;
+		height: 40px;
+		line-height: 40px;
+		background: #F17373;
+	}	
+</style>
+<body>
+	<div id="div">
+		<div class="navBox">
+			<span></span>
+		</div>
+		<ul class="navList">
+			<li><a href="javascript:;"></a></li>
+			<li><a href="javascript:;"></a></li>
+			<li><a href="javascript:;"></a></li>
+			<li><a href="javascript:;"></a></li>
+			<li><a href="javascript:;"></a></li>
+		</ul>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标右键事件</title>
+</head>
+<style>
+body {
+    height: 5000px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#div {
+    position: absolute;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.3);
+}
+
+#div ul {
+    background: #fff;
+    border: 1px solid #828282;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 75px;
+}
+
+#div ul li {
+    margin: 2px 0;
+    text-align: center;
+    display: block;
+}
+
+#div ul li a {
+    text-decoration: none;
+    font-family: "Microsoft YaHei";
+    font-size: 15px;
+    color: #000000;
+    display: block;
+}
+
+#div ul li a:hover {
+    background: #6496F6;
+    color: #fff;
+}
+</style>
+<script>
+window.onload = function() {
+        var oDiv = document.getElementById('div');
+        var oUl = oDiv.getElementsByTagName('ul')[0];
+        var oLi = oUl.getElementsByTagName('li');
+        oDiv.style.display = 'none';
+        for (var i = 0; i < oLi.length; i++) {
+
+        }
+    }
+    //获取含滚动条窗口的鼠标坐标，以x,y参数输出
+function clientXY(ev) {
+    var oEv = ev || event;
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+    return {
+        x: scrollLeft + ev.clientX,
+        y: scrollTop + ev.clientY
+    };
+}
+document.oncontextmenu = function(ev) {
+    var oEv = ev || event; //需要获取和事件相关的信息时使用
+    var oDiv = document.getElementById('div');
+    oDiv.style.top = clientXY(ev).y + 'px'; //选择获取要输出哪个参数需要使用"."号
+    oDiv.style.left = clientXY(ev).x + 'px';
+    oDiv.style.display = "block";
+    return false; //阻止默认事件
+}
+document.onclick = function() {
+    var oDiv = document.getElementById('div');
+    oDiv.style.display = 'none';
+}
+</script>
+
+<body>
+    <div id="div">
+        <ul>
+            <li>
+                <a href="">11111111</a>
+            </li>
+            <li>
+                <a href="">22222222</a>
+            </li>
+            <li>
+                <a href="">33333333</a>
+            </li>
+            <li>
+                <a href="">44444444</a>
+            </li>
+            <li>
+                <a href="">55555555</a>
+            </li>
+            <li>
+                <a href="">66666666</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

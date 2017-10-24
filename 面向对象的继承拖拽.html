@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象的继承拖拽</title>
+	<style>
+	#div{
+		width: 300px;
+		height: 300px;
+		background: #F63C3C;
+		position: absolute;
+	}
+	</style>
+	<script>
+		window.onload=function(){
+			new Drag('div');
+		}
+		function Drag(id){
+			this.oDiv=document.getElementById(id);
+			var _this=this;
+			this.disX=0;
+			this.disY=0;
+			this.oDiv.onmousedown=function(ev){
+				_this.Mousedown(ev);
+				return false;
+			}
+		}
+		Drag.prototype.Mousedown=function(ev){
+			var _this=this;
+			var oEv=event||ev;
+			this.disX=oEv.clientX-this.oDiv.offsetLeft;
+			this.disY=oEv.clientY-this.oDiv.offsetTop;
+			document.onmousemove=function(ev){
+				_this.Mousemove(ev);
+			}
+			document.onmouseup=function(){
+				_this.Mouseup();
+			}
+		}
+		Drag.prototype.Mousemove=function(ev){
+			var oEv=event||ev;
+			this.oDiv.style.left=oEv.clientX-this.disX+'px';
+			this.oDiv.style.top=oEv.clientY-this.disY+'px';
+		}
+		Drag.prototype.Mouseup=function(){
+			document.onmousemove=null;
+			document.onmousedown=null;
+		}
+	</script>
+</head>
+<body>
+	<div id="div"></div>
+</body>
+</html>
