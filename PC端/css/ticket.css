@@ -1,0 +1,171 @@
+@charset="utf-8";
+
+h2,h3{
+	margin: 0;
+	padding: 0;
+}
+
+#headline {	
+	background: linear-gradient(to right bottom,rgba(0,0,0,0.6), rgba(0,0,0,0)), url("../img/tour.jpg") no-repeat center;
+	width: 100%;
+	min-width: 1350px;
+	height: 360px;
+}
+
+#headline hgroup{
+	padding: 130px 0 0 180px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+}
+
+#headline h2{
+	font-size: 40px;
+}
+
+#headline h3{
+	font-size: 20px;
+}
+#container {
+	width: 1263px;
+	height: 1220px;
+	margin: 30px auto;
+}
+#container .sidebar{
+	width: 320px;
+	float: left;
+}
+#container .sidebox{
+	text-align: center;
+	border: 1px solid #eee;
+	font-size: 0;
+	padding: 5px 0;
+}
+#container .sidebox h2{
+	font-size: 22px;
+	letter-spacing: 1px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #fafafa;
+	color: #666;
+}
+#container .tag{
+	padding: 10px auto;
+}
+#container .tag ol{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	color: #999;
+	text-indent: 9px;
+	background: #eee;
+	font-size: 15px;
+	font-weight: bold;
+}
+#container .tag ol a{
+	display: block;
+}
+#container .tag ol a:hover{
+	background-color: #458b00;
+	color: #fff;
+}
+#container .figure figure{
+	margin: 0 auto;
+}
+#container  .figure figcaption{
+	font-size: 15px;
+	font-weight: bold;
+	color: #666;
+	margin: 5px 0;
+}
+#container .box ol{
+	display: inline-block;
+}
+#container .box ol a{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	display: block;
+	color: #0952AD;
+	background: #eee;
+}
+#container .box ol a:hover{
+	background-color: #458b00;
+	color: #fff;
+}
+#container .ticket{
+	width: 920px;
+	float: right;
+	margin: 0 0 0 18px;
+	font-size: 20px;
+}
+#container .ticket .tick_header{
+	height: 40px;
+	border-bottom:1px solid #666;
+	margin: 0 0 13px 0;
+}
+#container .ticket .tick_header ol{
+	display: inline-block;
+	font-size: 18px;
+	margin: 3px 20px 3px 0;
+}
+#container .ticket .tick_header ol a{
+	display: block;
+	color: #fff;
+	border-radius: 4px;
+	background-color: #F66F6F;
+	width: 45px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+#container .ticket .tick_header ol a:hover{
+	background-color: #D81616;
+}
+#container .ticket .tick_list{
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+#container .ticket .tick_list ol{
+	width: 280px;
+	border: 1px solid #FFFFFF;
+	display: inline-block;
+	background: #FFFFFF;
+	margin-bottom:5px;
+}
+#container .ticket .tick_list ol:hover{
+	border:1px solid #ff6701;
+}
+#container .ticket .tick_list ol:nth-child(3n-1){
+	margin: 0 37px;
+}
+#container .ticket .tick_list .list_title{
+	color: #333;
+	font-weight: bold;
+	font-size: 16px;
+	margin: 10px 0 5px;
+}
+#container .ticket .tick_list .list_title:hover{
+	text-decoration: underline;
+}
+#container .ticket .tick_list .list_introduce{
+	color: #666;
+	font-size: 12px;
+	height: 20px;
+	margin-bottom:5px; 
+}
+#container .ticket .tick_list .price{
+	color: #f60;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+#container .ticket .tick_list .price strong{
+	letter-spacing: 1px;
+	font-size: 30px;
+}
+

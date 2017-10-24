@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+body,h1,h2,p,ul,ol{
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #fff;
+	font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei UI","Microsoft YaHei",SimHei,"宋体",simsun,sans-serif;
+}
+a{
+	text-decoration: none;
+}
+#header {
+	width: 100%;
+	height: 70px;
+	min-width: 1263px;
+	background-color: #3E3E3E;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+	position: fixed;
+	z-index: 10;
+}
+#header .center{
+	width: 1263px;
+	height: 70px;
+	margin: 0 auto;
+}
+
+#header .logo{
+	width: 240px;
+	height: 70px;
+	background-image: url(../img/logo.png);
+	text-indent: -9999px;
+	float: left;
+}
+#header .link{
+	width: 700px;
+	height: 70px;
+	float: right;
+	text-align: center;
+}
+#header .link ol{
+	width: 120px;
+	float: left;
+	line-height: 70px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+#header .link a{
+	color: #DEDEDE;
+	display: block;
+}
+#header .link a:hover{
+	background: #000000;
+	color: #FFE910;
+}
+#form {
+	position: relative;
+	top: 70px;
+}
+#footer{
+	height: 186px;
+	clear: both;
+}
+#footer .top{
+	width: 100%;
+	min-width: 1263px;
+	height: 155px;
+	background:#222;
+	margin: 0 auto;
+}
+#footer .block{
+	width: 33.3%;
+	height: 155px;
+	float: left;
+	text-align: center;
+}
+#footer h2{
+	font-size: 20px;
+	vertical-align: left;
+	font-weight: normal;
+	color: #ccc;
+	padding: 10px 0 0 0;
+}
+#footer hr{
+	width: 100px;
+	color: #8B8B8B;
+	border:1px solid #444;
+}
+#footer ul{
+	font-size: 13px;
+	margin: 5px 0;
+}
+#footer ul a{
+	color: #ccc;
+}
+#footer .bottom{
+	text-align: center;
+	width: 100%;
+	min-width: 1263px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+	background: #000000;
+	color: #8F8F8F;
+	margin: 0 auto;
+	border-top: 1px solid #444;
+}

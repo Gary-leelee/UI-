@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+h2,h3{
+	margin: 0;
+	padding: 0;
+}
+
+#headline {	
+	background: linear-gradient(to right bottom,rgba(0,0,0,0.6), rgba(0,0,0,0)), url("../img/tour.jpg") no-repeat center;
+	width: 100%;
+	min-width: 1350px;
+	height: 360px;
+}
+
+#headline hgroup{
+	padding: 130px 0 0 180px;
+	color: #FFFFFF;
+	letter-spacing: 1px;
+}
+
+#headline h2{
+	font-size: 40px;
+}
+
+#headline h3{
+	font-size: 20px;
+}
+#container {
+	width: 1263px;
+	height: 1220px;
+	margin: 30px auto;
+}
+#container .sidebar{
+	width: 320px;
+	float: left;
+}
+#container .sidebox{
+	text-align: center;
+	border: 1px solid #eee;
+	font-size: 0;
+	padding: 5px 0;
+}
+#container .sidebox h2{
+	font-size: 22px;
+	letter-spacing: 1px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #fafafa;
+	color: #666;
+}
+#container .tag{
+	padding: 10px auto;
+}
+#container .tag ol{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	color: #999;
+	text-indent: 9px;
+	background: #eee;
+	font-size: 15px;
+	font-weight: bold;
+}
+#container .tag ol a{
+	display: block;
+}
+#container .tag ol a:hover{
+	background-color: #458b00;
+	color: #fff;
+}
+#container .figure figure{
+	margin: 0 auto;
+}
+#container  .figure figcaption{
+	font-size: 15px;
+	font-weight: bold;
+	color: #666;
+	margin: 5px 0;
+}
+#container .box ol{
+	display: inline-block;
+}
+#container .box ol a{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	display: block;
+	color: #0952AD;
+	background: #eee;
+}
+#container .box ol a:hover{
+	background-color: #458b00;
+	color: #fff;
+}
+#container .list{
+	width: 920px;
+	float: right;
+	margin: 0 0 0 18px;
+}
+#container .info{
+	height: 45px;
+	line-height: 45px;
+	background: #eee;
+	margin: 0 0 10px 0;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+#container .left{
+	display: inline-block;
+	float: left;
+	font-size: 0;                /*使行内元素连接的空格符消除*/
+}
+#container .right{
+	display: inline-block;
+	font-size: 0;
+	float: right;
+}
+#container .left ol{
+	width: 100px;
+	height: 43px;
+	line-height: 43px;
+	display: inline-block;
+}
+#container .right ol{
+	margin: 0 auto;
+	display: inline-block;
+}
+#container .left ol a{
+	height: 45px;
+	font-size: 16px;
+	line-height: 45px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #E5116B;
+	display: block;             /*重点：使超链接由行内元素转变成块状元素*/
+	font-weight: bold;
+}
+#container .left ol a:hover{
+	background: #A10B32;
+	border-top: 2px solid #458B00;
+	color: #FFFFFF;
+}
+#container .right ol a{
+	width: 70px;
+	height: 45px;
+	font-size: 16px;
+	line-height: 45px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #E5116B;
+	display: block;             /*重点：使超链接由行内元素转变成块状元素*/
+	font-weight: bold;
+}
+#container .right ol a:hover{
+	background: #A10B32;
+	border-top: 2px solid #458B00;
+/*	color: #FFFFFF;*/
+}
+#container .tour{
+	width: 908px;
+	height: 230px;
+	border: 1px solid #eee;
+	padding: 0;
+	margin: 0 0 10px 0;
+	clear: both;
+	position: relative;
+}
+#container .tour img{
+	float: left;
+}
+#container .tour .type{
+	width: 90px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	background-color: #59b200;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#container .tour figcaption{
+	float: right;
+	width: 520px;
+	height: 230px;
+	position: relative;
+}
+#container .tour h2{
+	font-size: 24px;
+	color: #333;
+	margin: 10px 0 10px 25px;
+}
+#container .tour h3{
+	font-size: 16px;
+	color: #666;
+	line-height: 1.5;
+	font-weight: normal;
+	padding: 10px 0 10px 25px;
+}
+#container .tour ul{
+	padding: 0 0 0 25px;
+	color: #666;
+	line-height: 2;
+}
+#container .tour mark{
+	border-radius: 4px;
+	border: 1px solid #458b00;
+	background-color: #fff;
+	color: #458b00;
+	padding: 0 3px;
+}
+#container .tour .bug{
+	position: absolute;
+	top: 100px;
+	right: 50px;
+}
+#container .tour .price{
+	color: #f60;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+#container .tour .price strong{
+	font-size: 40px;
+}
+#container .tour .price s{
+	font-size: 18px;
+	color: #999;
+}
+#container .tour .reserve{
+ 	margin: 0 10px 0 0;
+}
+#container .tour .reserve a{
+	display: block;
+	border-radius: 4px;
+	background: #f60;
+	text-align: center;
+	width: 152px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+#container .tour .reserve a:hover{
+	background: #7ED030;
+/*	display: block;
+	border-radius: 4px;
+	text-align: center;
+	width: 152px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;*/
+}
+#container .tour .disc{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 52px;
+	height: 52px;
+	background: url(../img/disc.png) no-repeat;
+}
+#container .tour .disc span{
+	font-size: 14px;
+	color: #ff7a4d;
+	display: block;                /*旋转需要将行内元素转化成块状元素*/
+	transform: rotate(45deg);
+	margin: 10px 0 0 16px;
+}
+#container .tour footer{
+	height: 30px;
+	line-height: 30px;
+	/*text-indent: 25px;*/          /* text-indent 属性规定文本块中首行文本的缩进。*/
+	margin: 10px 0 0 25px;
+	color: #666;
+}
+#container .tour time{
+	color: #458b00;
+}

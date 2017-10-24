@@ -1,0 +1,140 @@
+@charset="utf-8";
+html{
+	font-size: 625%;
+}
+body{
+	font-family: '微软雅黑';
+	font-size: 0.12rem;           /*----------基于iphone6实际分辨率------------*/
+	margin: 0;
+	padding: 0;
+}
+ul,ol{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.clearfix:after{
+	content:'.';
+	visibility: hidden;
+	clear: both;
+	display: block;
+	height: 0;
+}
+#header {
+	width: 100%;
+	height: .35rem;
+	line-height: .35rem;
+	background-color: #333;
+	margin: 0;
+	padding: 0;
+}
+#header .link .logo{
+	display: none;
+}
+#header .link ul ol{
+	width: 25%;
+	float: left;
+}
+#header .link ul ol a{
+	font-size: .15rem;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
+#header .link ul ol a:active{
+	background-color: #9A9A9A;
+}
+#footer{
+	font-size: .1rem;
+	margin: 0 auto;
+	max-width: 6.4rem;
+	position: relative;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+}
+#footer ul ol{
+	display: inline-block;
+	width: 33%;
+	float: left;
+}
+#footer ul .vb{
+	border-right:.01rem solid #fff;
+}
+#footer ul ol a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+#footer ul ol a:active{
+	background-color: #9A9A9A;
+}
+#footer .block{
+	display: inline-block;
+	width: 33.3%;
+	float:left;
+}
+#footer .block h2{
+	font-weight: normal;
+}
+#footer .block hr{
+	width: 50%;
+}
+#footer .copyright{
+	clear: both;
+	position: relative;
+	top: .05rem;
+	height: .3rem; 
+}
+
+/*iphone4 4s*/
+@media only screen and (min-width: ){
+	
+}
+
+
+
+/@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone5 */}
+@media only screen and (max-device-width :480px){ }
+@media only screen and (min-device-width :481px){ }
+
+/*iphone 6*/
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){ }
+
+/*iphone 6 plus*/
+@media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){ }
+
+/*魅族*/
+@media only screen and (min-device-width :1080px) and (-webkit-min-device-pixel-ratio : 2.5){ }
+
+/*mate7*/
+@media only screen and (min-device-width :1080px) and (-webkit-min-device-pixel-ratio : 3){ }
+
+/*4 4s*/
+@media only screen and (device-width :320px) and (-webkit-device-pixel-ratio:2){
+	body{
+		font-size: .08rem;
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {  }
+
+/* 平板之类的宽度 1024 以下设备 */
+@media only screen and (min-width: 321px) and (max-width: 1024px) {
+
+}
+
+/* PC客户端或大屏幕设备: 1028px 至更大 */
+@media only screen and (min-width: 1029px) {
+
+}
+
+/* 竖屏 */
+@media screen and (orientation:portrait) and (max-width: 720px) {
+
+}
+
+/* 横屏 */
+@media screen and (orientation:landscape){
+
+}
